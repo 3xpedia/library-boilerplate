@@ -1,0 +1,37 @@
+{
+  "name": "@3xpedia/library-boilerplate",
+  "version": "0.1.0",
+  "description": "simple boilerplate for JavaScript libraries",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs"
+  },
+  "author": {
+    "name": "Coclet Clément",
+    "url": "https://github.com/3xpedia"
+  },
+  "keywords": [
+    "javascript",
+    "library",
+    "boilerplate"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3xpedia/library-boilerplate"
+  },
+  "bugs": {
+    "url": "https://github.com/3xpedia/library-boilerplate/issues"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "glob": "^8.1.0",
+    "prettier": "^2.8.3",
+    "rollup": "^3.10.0"
+  }
+}
