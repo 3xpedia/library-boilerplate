@@ -1,11 +1,13 @@
 {
   "name": "@3xpedia/library-boilerplate",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "simple boilerplate for JavaScript libraries",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c --bundleConfigAsCjs"
+    "prebuild": "del-cli ./dist",
+    "build": "rollup -c --bundleConfigAsCjs",
+    "postbuild": "copy CHANGELOG.md LICENSE package.json README.md ./dist"
   },
   "author": {
     "name": "Coclet Clément",
@@ -26,6 +28,8 @@
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
     "@rollup/plugin-babel": "^6.0.3",
+    "copy": "^0.3.2",
+    "del-cli": "^5.0.0",
     "eslint": "^8.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.4",
