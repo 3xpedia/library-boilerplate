@@ -3,7 +3,7 @@
 ### Included with this boilerplate
 
 - Eslint and prettier config
-- Build scripts that output ESM, CJS and browser global. Write your code in ESM, export it anywhere
+- Build scripts that output ESM, CJS and browser standalone. Write your code in ESM, export it anywhere
 - As parcel does support TypeScript (among other stuff) out of the box, this library boilerplate does also support TypeScript.
 
 ### How to use
