@@ -1,13 +1,42 @@
 {
   "name": "@3xpedia/library-boilerplate",
-  "version": "0.1.2",
-  "description": "simple boilerplate for JavaScript libraries",
-  "main": "index.js",
+  "version": "0.2.0",
+  "description": "Simple NodeJs library boilerplate. ESM to anything else.",
   "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "targets": {
+    "main": {
+      "source": "./index.cjs",
+      "includeNodeModules": false
+    },
+    "module": {
+      "source": "./index.mjs",
+      "includeNodeModules": false
+    },
+    "global": {
+      "source": "./index.browser.js",
+      "context": "browser",
+      "outputFormat": "global",
+      "includeNodeModules": true,
+      "optimize": true
+    }
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "browserslist": [
+    "> 0.25%",
+    "not dead"
+  ],
   "scripts": {
     "prebuild": "del-cli ./dist",
-    "build": "rollup -c --bundleConfigAsCjs",
-    "postbuild": "copy CHANGELOG.md LICENSE package.json README.md ./dist"
+    "build": "parcel build",
+    "watch": "parcel watch"
   },
   "author": {
     "name": "Coclet Clément",
@@ -16,7 +45,9 @@
   "keywords": [
     "javascript",
     "library",
-    "boilerplate"
+    "boilerplate",
+    "esm",
+    "parcel"
   ],
   "repository": {
     "type": "git",
@@ -26,16 +57,12 @@
     "url": "https://github.com/3xpedia/library-boilerplate/issues"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.20.2",
-    "@rollup/plugin-babel": "^6.0.3",
-    "copy": "^0.3.2",
     "del-cli": "^5.0.0",
     "eslint": "^8.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.4",
     "eslint-plugin-prettier": "^4.2.1",
-    "glob": "^8.1.0",
-    "prettier": "^2.8.3",
-    "rollup": "^3.10.0"
+    "parcel": "^2.8.2",
+    "prettier": "^2.8.3"
   }
 }
